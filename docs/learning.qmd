@@ -1,0 +1,33 @@
+---
+title: "Reproducible document"
+author: "Josefine Klakk"
+format: html
+---
+
+## Basics of R
+
+```{r}
+1 + 1
+```
+
+## Setup code chunk
+
+```{r setup}
+library(tidyverse)
+```
+## About me
+
+- Josefine Klakk 
+- The National Centre for Register-based Research, Aarhus University
+
+I am **27 years** old and I am from *Haderslev* in Southern Denmark.
+
+## Simple code
+```{r}
+3 * 3
+```
+
+
+
+
+
