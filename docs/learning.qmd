@@ -120,9 +120,9 @@ ggplot(post_meal_data, aes(x = glykemi)) +
 
 ```{r}
 #| fig-cap: "scatterplot showing BMI against AUC of blood glucose"
-#| label: fig-bmi-auc-pg 
-ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) + 
-  geom_point() + 
+#| label: fig-bmi-auc-pg
+ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
+  geom_point() +
   geom_smooth()
 ```
 
@@ -133,7 +133,7 @@ ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
 ## Selecting data
 
 ```{r}
-select(post_meal_data,Age)
+select(post_meal_data, Age)
 
 select(post_meal_data, Age, BMI, Weight)
 
@@ -145,14 +145,3 @@ select(post_meal_data, ends_with("DXA"))
 
 select(post_meal_data, contains("0"))
 ```
-
-
-
-
-
-
-
-
-
-
-
