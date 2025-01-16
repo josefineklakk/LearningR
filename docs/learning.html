@@ -1072,6 +1072,41 @@ Figure&nbsp;5: Two, multi-dimensional plots of our data.
 </div>
 </div>
 </section>
+<section id="calculating-summary-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-summary-statistics">Calculating summary statistics</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>tidied_post_meal_data <span class="sc">|&gt;</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_bmi =</span> <span class="fu">max</span>(BMI),</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_bmi =</span> <span class="fu">min</span>(BMI)</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  max_bmi min_bmi
+    &lt;dbl&gt;   &lt;dbl&gt;
+1    33.7    20.2</code></pre>
+</div>
+</div>
+</section>
+<section id="summarrise-with-splitting" class="level2">
+<h2 class="anchored" data-anchor-id="summarrise-with-splitting">Summarrise with splitting</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>tidied_post_meal_data <span class="sc">|&gt;</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Group) <span class="sc">|&gt;</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_age =</span> <span class="fu">mean</span>(Age),</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_bmi =</span> <span class="fu">mean</span>(BMI)</span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  Group                 mean_age mean_bmi
+  &lt;chr&gt;                    &lt;dbl&gt;    &lt;dbl&gt;
+1 Control                   40.2     25.8
+2 First-degree relative     47.9     25.9</code></pre>
+</div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
