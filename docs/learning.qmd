@@ -210,3 +210,12 @@ small_post_meal_data |>
 small_post_meal_data |>
   filter(Group == "CTR" | BMI >= 25)
 ```
+
+## Modify or add column
+```{r}
+tidier_post_meal_data |>
+  mutate(
+    insulin_glucose_ratio = auc_insulin / auc_glucose,
+    Group = if_else(Group == "CTR", "Control", "First-degree relative")
+  )
+```
